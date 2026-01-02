@@ -1,6 +1,6 @@
 # 🌊 River Sense – Water Quality Prediction System
 
-River Sense is a Machine Learning–based project that predicts **Water Quality Index (WQI)** and classifies water quality into categories such as *Excellent, Good, Medium, Bad,* and *Very Bad*.  
+River Sense is a Machine Learningbased project that predicts **Water Quality Index (WQI)** and classifies water quality into categories such as *Excellent, Good, Medium, Bad,* and *Very Bad*.  
 The project consists of a **React-based frontend** for visualization and a **Python ML backend** for prediction.
 
 
@@ -43,5 +43,6 @@ Water Quality Class
 51 – 70	      ->Medium,
 26 – 50	      ->Bad,
 ≤ 25	        ->Very Bad
+
 
 
