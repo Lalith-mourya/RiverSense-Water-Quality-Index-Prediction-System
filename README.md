@@ -19,15 +19,15 @@ The project consists of a **React-based frontend** for visualization and a **Pyt
 
 ## INPUT:
 ## Enter the required water parameters:
-Temperature
-Dissolved Oxygen
-pH
-Conductivity
-BOD
-Nitrate
-Total Coliform
-Year
-State
+Temperature  
+Dissolved Oxygen  
+pH  
+Conductivity  
+BOD  
+Nitrate  
+Total Coliform  
+Year  
+State  
 
 ## The system outputs:
 Predicted WQI value
@@ -39,3 +39,4 @@ Water Quality Class
 51 – 70	      ->Medium,
 26 – 50	      ->Bad,
 ≤ 25	        ->Very Bad
+
