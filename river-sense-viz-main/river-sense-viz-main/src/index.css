@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Water Quality Index Design System - All colors MUST be HSL */
+
+@layer base {
+  :root {
+    --background: 203 100% 96%;
+    --foreground: 210 11% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 11% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 11% 15%;
+
+    --primary: 200 100% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 195 100% 85%;
+    --secondary-foreground: 210 11% 15%;
+
+    --muted: 195 50% 90%;
+    --muted-foreground: 210 11% 45%;
+
+    --accent: 185 100% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 195 50% 85%;
+    --input: 195 50% 95%;
+    --ring: 200 100% 40%;
+
+    --radius: 0.75rem;
+
+    /* Water Quality Color System */
+    --water-excellent: 120 100% 25%;
+    --water-good: 60 100% 35%;
+    --water-medium: 35 100% 50%;
+    --water-bad: 15 100% 55%;
+    --water-very-bad: 0 100% 50%;
+
+    /* Gradients */
+    --gradient-water: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-ocean: linear-gradient(180deg, hsl(195 100% 85%), hsl(200 100% 40%));
+    --gradient-quality: linear-gradient(90deg, hsl(var(--water-very-bad)), hsl(var(--water-excellent)));
+
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 210 15% 8%;
+    --foreground: 195 100% 95%;
+
+    --card: 210 15% 10%;
+    --card-foreground: 195 100% 95%;
+
+    --popover: 210 15% 10%;
+    --popover-foreground: 195 100% 95%;
+
+    --primary: 185 100% 60%;
+    --primary-foreground: 210 15% 8%;
+
+    --secondary: 210 15% 15%;
+    --secondary-foreground: 195 100% 95%;
+
+    --muted: 210 15% 15%;
+    --muted-foreground: 195 30% 70%;
+
+    --accent: 200 100% 50%;
+    --accent-foreground: 210 15% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 195 100% 95%;
+
+    --border: 210 15% 20%;
+    --input: 210 15% 15%;
+    --ring: 185 100% 60%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer utilities {
+  /* Water animations */
+  .water-flow {
+    background: var(--gradient-water);
+    animation: flow 3s ease-in-out infinite;
+  }
+
+  .water-ripple {
+    animation: ripple 2s linear infinite;
+  }
+
+  @keyframes flow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  @keyframes ripple {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+  }
+
+  @keyframes wave {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(180deg); }
+  }
+
+  .wave-animation {
+    animation: wave 4s ease-in-out infinite;
+  }
+
+  /* Quality indicators */
+  .quality-excellent { background: hsl(var(--water-excellent)); }
+  .quality-good { background: hsl(var(--water-good)); }
+  .quality-medium { background: hsl(var(--water-medium)); }
+  .quality-bad { background: hsl(var(--water-bad)); }
+  .quality-very-bad { background: hsl(var(--water-very-bad)); }
+
+  /* Gradient backgrounds */
+  .bg-gradient-water { background: var(--gradient-water); }
+  .bg-gradient-ocean { background: var(--gradient-ocean); }
+  .bg-gradient-quality { background: var(--gradient-quality); }
+}
